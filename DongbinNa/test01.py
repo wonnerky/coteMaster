@@ -1,6 +1,3 @@
-n = 3
-n_x = -1
-n_y = 2
+idx = [i for i in range(10)]
 
-if n_x == n or n_y == n or n_x < 0 or n_y < 0:
-    print('check')
+print(idx[3:3])
