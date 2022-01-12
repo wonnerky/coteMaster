@@ -1,3 +1,5 @@
-idx = [i for i in range(10)]
-
-print(idx[3:3])
+a = -100
+b = 3
+print(a//b)
+print(-a//b)
+print(0//3)
