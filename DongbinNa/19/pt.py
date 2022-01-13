@@ -9,11 +9,10 @@ opers_ = list(map(int, input().split()))
 opers = []
 for i, ele in enumerate(opers_):
     opers += [i] * ele
-opers = list(permutations(opers, n-1))
 
 min = 1e10
 max = 1e-10
-for oper in opers:
+for oper in permutations(opers, n-1):
     result = numbers[0]
     for i in range(n-1):
         if oper[i] == 0:
