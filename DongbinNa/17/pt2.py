@@ -1,6 +1,7 @@
 # NxN 시험관, 바이러스 매 초 상하좌우로 증식, 낮은 번호의 바이러스부터 우선순위
 # 시간동안(for) 낮은 번호부터 증식 시작. 바이러스가 있거나 matrix 범위 이상이면 stop.
 # 바이러스 종류별 좌표 추가
+import copy
 
 n, k = map(int, input().split())
 matrix = []
@@ -19,6 +20,7 @@ for i in range(n):
         if matrix[i][j] == 0:
             no_virus.append((i, j))
 
+
 def move(cord):
     x, y = cord
     v_num = k+1
@@ -30,14 +32,20 @@ def move(cord):
         if matrix[n_x][n_y] != 0:
             if v_num > matrix[n_x][n_y]:
                 v_num = matrix[n_x][n_y]
-    if v_num != k+1:
-        matrix[x][y] = v_num
-        no_virus.remove(cord)
+    if v_num < k+1:
+        # matrix[x][y] = v_num
+        update[cord] = v_num
+        no_virus_.remove(cord)
 
 
 for _ in range(s):
+    no_virus_ = copy.deepcopy(no_virus)
+    update = {}
     for cord in no_virus:
         move(cord)
+    for (x_, y_), v_num in update.items():
+        matrix[x_][y_] = v_num
+    no_virus = no_virus_
 
 # answer. initial cord = (1,1)
 print(matrix[x-1][y-1])
