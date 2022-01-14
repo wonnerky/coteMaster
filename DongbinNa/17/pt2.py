@@ -13,31 +13,31 @@ dx = [-1, 1, 0, 0]  # 위아래
 dy = [0, 0, -1, 1]  # 좌우
 
 # 바이러스 좌표 dict. initial
-virus = {}
-for i in range(k):
-    virus[i+1] = []
+no_virus = []
 for i in range(n):
     for j in range(n):
-        if matrix[i][j] != 0:
-            virus[matrix[i][j]].append((i,j))
+        if matrix[i][j] == 0:
+            no_virus.append((i, j))
 
 def move(cord):
     x, y = cord
-    v_num = matrix[x][y]
+    v_num = k+1
     for i in range(4):
         n_x = x+dx[i]
         n_y = y+dy[i]
         if n_x == n or n_y == n or n_x < 0 or n_y < 0:
             continue
-        if matrix[n_x][n_y] == 0:
-            matrix[n_x][n_y] = v_num
-            virus[v_num].append((n_x, n_y))
+        if matrix[n_x][n_y] != 0:
+            if v_num > matrix[n_x][n_y]:
+                v_num = matrix[n_x][n_y]
+    if v_num != k+1:
+        matrix[x][y] = v_num
+        no_virus.remove(cord)
 
 
 for _ in range(s):
-    for idx in sorted(virus.keys()):
-        for cord in virus[idx]:
-            move(cord)
+    for cord in no_virus:
+        move(cord)
 
 # answer. initial cord = (1,1)
 print(matrix[x-1][y-1])
