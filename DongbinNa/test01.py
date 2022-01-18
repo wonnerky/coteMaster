@@ -1,6 +1,7 @@
-a = -1326523632
+a = {(1,2), (1,3), (5,6)}
+b = {(3,4), (2,3), (5,6)}
 
-b = 43
+students = []
+if a.intersection(b):
 
-print(int(a/b))
-print(-(-a//b))
+    print(a.intersection(b))
