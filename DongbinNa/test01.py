@@ -1,7 +1,10 @@
-a = {(1,2), (1,3), (5,6)}
-b = {(3,4), (2,3), (5,6)}
+from collections import deque
 
-students = []
-if a.intersection(b):
+n = 10
 
-    print(a.intersection(b))
+cand = deque([(i,j) for i in range(n) for j in range(i%2,n,2)])
+
+print(len(cand))
+print(cand)
+
+print(3%2)
