@@ -1,3 +1,4 @@
-name = ['Donghyuk', 'dongkey', 'Sangkeun', 'Sunyoung', 'nsj']
+lr = 9e-5
 
-print(*name)
+if lr == 0.00009:
+    print(lr)
