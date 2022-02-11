@@ -1,4 +1,4 @@
-lr = 9e-5
-
-if lr == 0.00009:
-    print(lr)
+k = [3, 2, 1, 4, 65, 5]
+print(k)
+k.sort()
+print(k)
