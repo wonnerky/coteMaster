@@ -1,4 +1,2 @@
-k = [3, 2, 1, 4, 65, 5]
-print(k)
-k.sort()
-print(k)
+for ele in range(2, 4):
+    print(ele)
