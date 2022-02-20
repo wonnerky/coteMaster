@@ -1,7 +1,10 @@
-def m(n):
-    if n > 3:
-        return
-    print(n)
+board1 = [[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5]]
+board2 = [[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5]]
 
-for ele in range(5):
-    m(ele)
+a = True
+for i in range(5):
+    print(a)
+    a = not a
+
+
+
