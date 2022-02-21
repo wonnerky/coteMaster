@@ -50,6 +50,7 @@ def solution(n, info):
     dfs(0, n, li, 0)
     li = [0] * 11
     dfs(0, n, li, 1)
+    print(result)
     max_num = 1
     result_ = []
     for ele in result:

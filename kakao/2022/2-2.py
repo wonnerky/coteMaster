@@ -14,22 +14,25 @@ def solution(n, k):
         rev_base += str(mod)
     num = rev_base[::-1]
     print(num)
-    candid = []
-    can = ''
-    for ele in num:
-        if ele != '0':
-            can += ele
-        else:
-            if can:
-                candid.append(can)
-                can = ''
-    if can:
-        candid.append(can)
+    # candid = []
+    # can = ''
+    # for ele in num:
+    #     if ele != '0':
+    #         can += ele
+    #     else:
+    #         if can:
+    #             candid.append(can)
+    #             can = ''
+    # if can:
+    #     candid.append(can)
+    candid = num.split('0')
+
     print(candid)
     answer = 0
     for ele in candid:
-        if primenumber(int(ele)):
-            answer += 1
+        if ele:
+            if primenumber(int(ele)):
+                answer += 1
 
     return answer
 

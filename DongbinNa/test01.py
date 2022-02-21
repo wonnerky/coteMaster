@@ -1,10 +1,10 @@
-board1 = [[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5]]
-board2 = [[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5]]
-
-a = True
-for i in range(5):
-    print(a)
-    a = not a
-
-
-
+n = 10
+state = 23
+print(bin(state))
+print()
+for i in range(n):
+    print(bin(1 << i))
+    # if state & (1 << i):
+    #     print(bin(state & (1 << i)))
+    if state | (1 << i):
+        print(bin(state | (1 << i)))

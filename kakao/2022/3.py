@@ -20,6 +20,7 @@ def solution(fees, records):
         car_fee[k] = 0
         if len(v) % 2 != 0:
             data[k].append('23:59')
+    print(data)
     for k, v in data.items():
         time = 0
         for i in range(0, len(v), 2):
