@@ -1,4 +1,2 @@
-length = 5
-
-visit = [[False] * length for _ in range(length)]
-print(visit)
+a = 'cb'
+print(str(sorted(a)))
