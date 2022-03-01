@@ -2,7 +2,7 @@ def solution(new_id):
     answer = ''
     for ele in new_id:
         if 65 <= ord(ele) <= 90:
-            answer += chr(ord(ele) + 32)
+            answer += chr(ord(ele) + 32)    # 대문자 to 소문자
         elif 48 <= ord(ele) <= 57 or 45 <= ord(ele) <= 46 or ord(ele) == 95 or 97 <= ord(ele) <= 122:
             answer += ele
         else:
