@@ -1,6 +1,4 @@
-A = 'B'
-a = 'b'
-
-print(ord(A))
-print(ord(a))
-print(chr(98))
+a = [1,2,3,4,5,6]
+a = a[len(a):]
+if not a:
+    print('123')
