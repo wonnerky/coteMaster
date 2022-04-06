@@ -1,5 +1,5 @@
 # dfs
-import copy
+from itertools import permutations
 
 n = int(input())
 numbers = list(map(int, input().split()))
@@ -31,7 +31,8 @@ def dfs(opers, pre, idx):
 
 min_num = 1e9
 max_num = -1e9
-dfs(opers, numbers[0], 1)
+for ele in permutations(opers, len(opers)):
+    dfs(list(ele), numbers[0], 1)
 print(max_num)
 print(min_num)
 
