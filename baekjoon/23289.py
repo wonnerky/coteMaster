@@ -4,25 +4,23 @@ R, C, K = map(int, input().split())
 warmers = []
 invest = []
 for r in range(R):
-    b = list(map(int, input().split()))
+    b = input().split()
     for c in range(C):
-        if b[c] == 5:
-            invest.append((r, c))
-        elif b[c] == 0:
+        if b[c] == '0':
             continue
+        elif b[c] == '5':
+            invest.append((r, c))
         else:
-            warmers.append([(r, c), b[c]])
+            warmers.append([(r, c), int(b[c])])
 W = int(input())
 wall = []
 # 위, 오, 왼, 아
 mov = [(-1, 0), (0, 1)]
 for _ in range(W):
     r, c, t = map(int, input().split())
-    r -= 1
-    c -= 1
-    wall.append([(r, c), t])
-    nr = r + mov[t][0]
-    nc = c + mov[t][1]
+    wall.append([(r - 1, c - 1), t])
+    nr = r - 1 + mov[t][0]
+    nc = c - 1 + mov[t][1]
     if 0 <= nr < R and 0 <= nc < C:
         if t == 0:
             wall.append([(nr, nc), 3])
@@ -33,7 +31,7 @@ for _ in range(W):
 # 벽 정보 : [(dr, dc), 벽 위치 (0: 위, 1: 오, 2: 왼, 3: 아)]
 # checks = [온풍 타겟 위치, [[벽1], [벽2]]]
 checks =[[[(0, 1), [[(0, 0), 1]]], [(-1, 1), [[(0, 0), 0], [(-1, 0), 1]]], [(1, 1), [[(0, 0), 3], [(1, 0), 1]]]],
-         [[(0, -1), [[(0, 0), 2]]], [(-1, -1), [[(0, 0), 0]], [(-1, 0), 2]], [(1, -1), [[(0, 0), 3], [(1, 0), 2]]]],
+         [[(0, -1), [[(0, 0), 2]]], [(-1, -1), [[(0, 0), 0], [(-1, 0), 2]]], [(1, -1), [[(0, 0), 3], [(1, 0), 2]]]],
          [[(-1, 0), [[(0, 0), 0]]], [(-1, -1), [[(0, 0), 2], [(0, -1), 0]]], [(-1, 1), [[(0, 0), 1], [(0, 1), 0]]]],
          [[(1, 0), [[(0, 0), 3]]], [(1, 1), [[(0, 0), 1], [(0, 1), 3]]], [(1, -1), [[(0, 0), 2], [(0, -1), 3]]]]]
 mov = [(0, 1), (0, -1), (-1, 0), (1, 0)]
@@ -118,9 +116,6 @@ while choco < 101:
     if flag:
         break
 
-
-for ele in board:
-    print(ele)
 
 print(choco)
 
