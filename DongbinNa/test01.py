@@ -1,5 +1,2 @@
-wall = []
-
-
-if [(0, 3), 5] in wall:
-    print('yes')
+for i in range(1, 5):
+    print(i)
