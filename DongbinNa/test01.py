@@ -1,2 +1,4 @@
-for i in range(1, 5):
-    print(i)
+a = 'abcded'
+print(a)
+a = a.strip('')
+print(a)
